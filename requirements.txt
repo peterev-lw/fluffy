@@ -1,0 +1,5 @@
+pandas
+datetime
+git+ssh://git@github.com/lendingworks/analytics-connectors.git@master#egg=connectors
+faber-ml==0.0.6
+pyyaml>=5.4.1

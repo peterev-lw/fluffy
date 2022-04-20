@@ -1,0 +1,3 @@
+loans_basic:
+      read_func: execute_sql_and_load_into_dataframe
+      

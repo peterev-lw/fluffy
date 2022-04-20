@@ -3,7 +3,7 @@ from faber import *
 from src.common import environments_config
 from src.build.pipelines.credit_pipeline import *
 
-def main_build(target_env='sandbox', start_cutoff='2022-04-01', end_cutoff='2022-04-11'):
+def main_build(target_env='sandbox', start_cutoff='2021-01-01', end_cutoff='2022-01-01'):
 
     set_boto_session(profile_name=target_env, region_name='eu-west-1')
     state=environments_config[target_env].copy()

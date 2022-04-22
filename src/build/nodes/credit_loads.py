@@ -88,6 +88,10 @@ def get_loans_with_flag_decision_codes_over_threshold(dc_dict,
     df['rag_status'] = df.apply(lambda x: 'Green' if x['percentage'] <= dc_dict[x['decision_code']][0] else
                                           ('Amber' if x['percentage'] <= dc_dict[x['decision_code']][1] else 'Red'
                                           ), axis = 1)
+    df['threshold_hit'] = df.apply(lambda x: 'None' if x['rag_status'] == 'Green' else
+                                          (  f"{dc_dict[x['decision_code']][0]}-{dc_dict[x['decision_code']][1]}%" if x['rag_status'] == 'Amber'
+                                             else f"> {dc_dict[x['decision_code']][1]}%"
+                                          ), axis = 1)
                                            
     return df
 

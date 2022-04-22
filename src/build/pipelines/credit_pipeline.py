@@ -21,8 +21,12 @@ credit_base_pipeline = [
     ),
     node(get_loans_with_flag_decision_codes_over_threshold,
          inputs = ['flag_decision_code_threshold_dictionary', 'start_cutoff', 'end_cutoff'],
-         outputs = ['decision_codes_to_flag_threshold'],
+         outputs = ['threshold_flagged_decision_codes'],
          tags = ['get_over_threshold_decision_codes']
     ),
-
+    node(over_threshold_decision_codes_to_standard_form,
+         inputs = ['credit_sf_table', 'threshold_flagged_decision_codes', 'flag_decision_code_threshold_dictionary'],
+         outputs = ['credit_sf_table'],
+         tags = ['over_threshold_decision_codes_to_sf']
+    )
 ]

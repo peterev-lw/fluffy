@@ -22,14 +22,8 @@ def main_build(target_env='sandbox', start_cutoff='2022-01-01', end_cutoff='2022
 
     fb.run()
 
-    print(fb.state['flagged_decision_code_loans'].head())
-    print(fb.state['flagged_decision_code_loans'].info())
     print(fb.state['credit_sf_table'].info())
-    print(fb.state['credit_sf_table'].head())
-    print(fb.state['decision_codes_to_flag_threshold'].info())
-    print(fb.state['decision_codes_to_flag_threshold'].head())
-    print(max(fb.state['decision_codes_to_flag_threshold'].percentage))
-    # print(fb.state['decision_codes_to_flag_threshold'].info())
-
-
+    print(fb.state['credit_sf_table'].head(20))
+    fb.state['credit_sf_table'].to_csv('./sf_table_example.csv')
+  
     return fb

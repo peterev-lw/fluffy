@@ -18,6 +18,7 @@ def initialise_standard_form_table():
             'threshold_hit',
             'rag_status',
             'num_instances',
+            'percentage',
             'created_at',
             'loan_ids',
             'loan_request_ids',

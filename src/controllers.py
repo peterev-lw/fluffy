@@ -4,7 +4,7 @@ from src.common import environments_config
 from src.build.pipelines.credit_pipeline import *
 from src.build.pipelines.loans_pipeline import *
 
-def main_build(target_env='sandbox', start_cutoff='2021-01-01', end_cutoff='2022-01-01'):
+def main_build(target_env='sandbox', start_cutoff='2022-01-01', end_cutoff='2022-04-01'):
 
     set_boto_session(profile_name=target_env, region_name='eu-west-1')
     state=environments_config[target_env].copy()
@@ -26,6 +26,10 @@ def main_build(target_env='sandbox', start_cutoff='2021-01-01', end_cutoff='2022
     print(fb.state['flagged_decision_code_loans'].info())
     print(fb.state['credit_sf_table'].info())
     print(fb.state['credit_sf_table'].head())
+    print(fb.state['decision_codes_to_flag_threshold'].info())
+    print(fb.state['decision_codes_to_flag_threshold'].head())
+    print(max(fb.state['decision_codes_to_flag_threshold'].percentage))
+    # print(fb.state['decision_codes_to_flag_threshold'].info())
 
 
     return fb

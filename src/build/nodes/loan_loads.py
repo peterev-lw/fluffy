@@ -1,9 +1,11 @@
 from connectors import execute_sql_and_load_into_dataframe
 
-def get_mismatched_payment_transactions_balances(start_cutoff, end_cutoff):
-    #settled = True for payments received
+def get_mismatched_payment_transactions_outstanding_balances(start_cutoff, end_cutoff):
+    """
+    
 
-    #transactions, sum by loan id
+    """
+  
 
     query = f"""
     select p.loan_id, p.payments_sum, t.transactions_sum

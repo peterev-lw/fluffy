@@ -17,8 +17,11 @@ def flagged_decision_codes_to_standard_form(sf_table, flagged_loans):
     """
 
     #pivot to get all loans/loan_request for each decision code together
-    pivot = pd.pivot_table(flagged_loans, index = 'decision_code', values = ['loan_id', 'loan_request_id'],
-                        aggfunc = lambda x:list(x)).reset_index()
+    pivot = pd.pivot_table(flagged_loans, 
+                           index = 'decision_code',
+                           values = ['loan_id', 'loan_request_id'],
+                           aggfunc = lambda x:list(x)
+                           ).reset_index()
 
     df = sf_table.copy()
     df['loan_ids'] = pivot['loan_id']
@@ -32,3 +35,4 @@ def flagged_decision_codes_to_standard_form(sf_table, flagged_loans):
     df['num_instances'] = pivot['loan_id'].map(len)
     
     return df
+

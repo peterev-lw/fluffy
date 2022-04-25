@@ -21,7 +21,34 @@ decision_codes_to_flag: ['PD001',
                          'PD028',
                          ]
 
-flag_decision_code_threshold_dictionary: {'PD401':[0, 1],
+# For decision codes that flag for any record, the dictionary value is given as 'Any'
+# If there is an permitted threshold, the dictionary value is a list of two numbers
+# The first number is the Green-Amber threshold limit
+# The second number is the Amber-Red threshold limit
+
+decision_codes_to_flag_dict: {
+                                          'PD001':'Any',
+                                          'PD002':'Any',
+                                          'PD003':'Any',
+                                          'PD004':'Any',
+                                          'PD005':'Any',
+                                          'PD006':'Any',
+                                          'PD007':'Any',
+                                          'PD008':'Any',
+                                          'PD009':'Any', 
+                                          'PD010':'Any',
+                                          'PD011':'Any',
+                                          'PD012':'Any',
+                                          'PD016':'Any',
+                                          'PD017':'Any',
+                                          'PD019':'Any',
+                                          'PD022':'Any',
+                                          'PD023':'Any',
+                                          'PD024':'Any',
+                                          'PD025':'Any',
+                                          'PD026':'Any',
+                                          'PD028':'Any',
+                                          'PD401':[0, 1],
                                           'PD402':[0, 1],
                                           'PD403':[0, 1],
                                           'PD404':[0, 1],

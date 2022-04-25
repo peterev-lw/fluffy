@@ -12,7 +12,7 @@ def main_build(target_env='sandbox', start_cutoff='2022-01-01', end_cutoff='2022
     state['start_cutoff'] = start_cutoff
     state['end_cutoff'] = end_cutoff
 
-    state, catalog = build_catalog(state, path = 'conf/credit/')
+    state, catalog = build_catalog(state, path = 'conf/build/')
 
     fb=Faber(catalog)
     fb.set_state(state)

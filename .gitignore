@@ -1,3 +1,4 @@
 src/build/__pycache__
 src/build/nodes/__pycache__
 src/build/pipelines/__pycache__
+src/__pycache__

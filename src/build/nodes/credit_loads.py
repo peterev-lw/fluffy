@@ -1,7 +1,7 @@
 import pandas as pd
 from connectors import execute_sql_and_load_into_dataframe
 
-def get_loans_with_flag_decision_codes(dc_dict, start_cutoff, end_cutoff):
+def get_loans_with_flag_decision_codes(all_loans, dc_dict):
     """
     Given a dictionary of decision codes, along with their respective thresholds, log an error if said
     thresholds have been crossed, and if so identify which
@@ -18,23 +18,6 @@ def get_loans_with_flag_decision_codes(dc_dict, start_cutoff, end_cutoff):
     DataFrame of loan_id, loan_request_id and decision_code
     """
 
-    query = f"""
-    select l.id as loan_id,
-           lrdc.loan_request_id as loan_request_id,
-           dc.name as decision_code
-    from loans as l
-
-    inner join loan_request_decision_codes as lrdc
-    on l.loanrequest_id = lrdc.loan_request_id
-
-    inner join decision_codes as dc
-    on dc.id = lrdc.decision_code_id
-
-    where lrdc.updated_at > '{start_cutoff}' 
-    and lrdc.updated_at < '{end_cutoff}'
-    """
-
-    all_loans = execute_sql_and_load_into_dataframe(query)
     total_number = len(all_loans)
 
     decision_codes_to_flag = list(dc_dict.keys())

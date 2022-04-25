@@ -1,31 +1,9 @@
-decision_codes_to_flag: ['PD001',
-                         'PD002',
-                         'PD003',
-                         'PD004',
-                         'PD005',
-                         'PD006',
-                         'PD007',
-                         'PD008',
-                         'PD009', 
-                         'PD010',
-                         'PD011',
-                         'PD012',
-                         'PD016',
-                         'PD017',
-                         'PD019',
-                         'PD022',
-                         'PD023',
-                         'PD024',
-                         'PD025',
-                         'PD026',
-                         'PD028',
-                         ]
+
 
 # For decision codes that flag for any record, the dictionary value is given as 'Any'
 # If there is an permitted threshold, the dictionary value is a list of two numbers
 # The first number is the Green-Amber threshold limit
 # The second number is the Amber-Red threshold limit
-
 decision_codes_to_flag_dict: {
                                           'PD001':'Any',
                                           'PD002':'Any',

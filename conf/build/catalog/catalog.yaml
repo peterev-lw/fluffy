@@ -1,0 +1,7 @@
+decision_codes_table_catalog:
+      read_func: read_sql_file
+      sql_file: src/build/sql_files/load_decision_codes.sql
+      params:
+            start_cutoff: {{start_cutoff}}
+            end_cutoff: {{end_cutoff}}
+      

@@ -1,5 +1,4 @@
 import pandas as pd
-from connectors import execute_sql_and_load_into_dataframe
 
 def get_loans_with_flag_decision_codes(all_loans, dc_dict):
     """

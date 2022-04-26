@@ -1,4 +1,8 @@
-
+# system checks compare the number of loan requests (amongst other things)
+# to the mean over a larger period. This variable defines that period.
+system_checks_num_weeks_to_calculate_mean: 4
+system_checks_num_days_to_offset_mean_calc: 1
+system_num_standard_deviations_from_mean_to_flag: 2
 
 # For decision codes that flag for any record, the dictionary value is given as 'Any'
 # If there is an permitted threshold, the dictionary value is a list of two numbers
